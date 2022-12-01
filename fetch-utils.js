@@ -10,7 +10,9 @@ export function getUser() {
 
 export async function getFamilies() {
     // fetch all families and their bunnies
+    const response = await client.from('loving_families').select('*, fuzzy_bunnies(*)');
     // return checkError(response);
+    return checkError(response);
 }
 
 export async function deleteBunny(id) {
@@ -18,9 +20,11 @@ export async function deleteBunny(id) {
     // return checkError(response);
 }
 
-export async function createBunny(bunny) {
+export async function createBunny(bunny, family) {
     // create a bunny using the bunny argument
-    // return checkError(response);
+    const response = await client.from('fuzzy_bunnies').insert({ name: bunny, family_id: family });
+    console.log(response, 'bunny');
+    return checkError(response);
 }
 
 // MARTHA STEWART (PRE-MADE) FUNCTIONS
