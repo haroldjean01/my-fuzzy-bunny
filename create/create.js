@@ -15,6 +15,8 @@ form.addEventListener('submit', async (e) => {
     await createBunny(name, family);
     // console.log(createBunny);
     form.reset();
+
+    window.location.href = '../families';
 });
 
 window.addEventListener('load', async () => {
@@ -29,7 +31,9 @@ window.addEventListener('load', async () => {
     for (let family of families) {
         const option = document.createElement('option');
         option.textContent = family.name;
+        option.value = family.id;
         familySelect.append(option);
+        console.log(family, 'option');
     }
 });
 
