@@ -27,6 +27,9 @@ window.addEventListener('load', async () => {
     // and append the option to the select
     const families = await getFamilies();
     for (let family of families) {
+        const option = document.createElement('option');
+        option.textContent = family.name;
+        familySelect.append(option);
     }
 });
 
