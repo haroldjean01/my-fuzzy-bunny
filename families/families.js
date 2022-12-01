@@ -40,6 +40,15 @@ async function displayFamilies() {
         familyH3.textContent = family.name;
         familyEl.append(familyH3);
         familiesEl.append(familyEl);
+
+        for (let bunny of family.fuzzy_bunnies) {
+            const bunnyEl = document.createElement('div');
+            bunnyEl.classList.add('bunny');
+            const bunnyP = document.createElement('p');
+            bunnyP.textContent = bunny.name;
+            bunnyEl.append(bunnyP);
+            familyEl.append(bunnyEl);
+        }
     }
 }
 
