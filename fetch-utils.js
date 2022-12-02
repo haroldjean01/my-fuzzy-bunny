@@ -24,7 +24,6 @@ export async function deleteBunny(id) {
 export async function createBunny(bunny, family) {
     // create a bunny using the bunny argument
     const response = await client.from('fuzzy_bunnies').insert({ name: bunny, family_id: family });
-    console.log(response, 'bunny');
     return checkError(response);
 }
 

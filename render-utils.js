@@ -1,32 +1,30 @@
 import { deleteBunny } from '../fetch-utils.js';
 import { displayFamilies } from './families.js';
 
-export function renderFamilies(family) {
-    const divEl = document.createElement('div');
-    divEl.classList.add('family');
+// export function renderFamilies(family) {
+//     const divEl = document.createElement('div');
+//     divEl.classList.add('family');
 
-    const famH3 = document.createElement('h3');
-    famH3.textContent = family.name;
+//     const famH3 = document.createElement('h3');
+//     famH3.textContent = family.name;
 
-    divEl.append(famH3);
+//     divEl.append(famH3);
 
-    return divEl;
-}
+//     return divEl;
+// }
 
-export function renderBunnies(bunny) {
-    const bunniesDiv = document.createElement('div');
-    bunniesDiv.classList.add('bunnies');
+// export function renderBunnies(bunny) {
+//     const bunniesDiv = document.createElement('div');
+//     bunniesDiv.classList.add('bunnies');
 
-    const bunnyDiv = document.createElement('div');
-    bunnyDiv.classList.add('bunny');
-    bunnyDiv.textContent = bunny.name;
+//     const bunnyDiv = document.createElement('div');
+//     bunnyDiv.classList.add('bunny');
+//     bunnyDiv.textContent = bunny.name;
 
-    bunnyDiv.addEventListener('click', async () => {
-        await deleteBunny(bunny.id);
-        displayFamilies();
-    });
+//     const bunnyP = document.createElement('p');
+//     const test = (bunnyP.textContent = bunny.name);
 
-    bunniesDiv.append(bunnyDiv);
+//     bunniesDiv.append(bunnyDiv);
 
-    return bunniesDiv;
-}
+//     return bunniesDiv;
+// }

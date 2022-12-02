@@ -48,6 +48,12 @@ async function displayFamilies() {
             bunnyP.textContent = bunny.name;
             bunnyEl.append(bunnyP);
             familyEl.append(bunnyEl);
+
+            bunnyP.addEventListener('click', async () => {
+                await deleteBunny(bunny.id);
+                const updateFamilies = displayFamilies();
+                displayFamilies(updateFamilies);
+            });
         }
     }
 }
