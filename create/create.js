@@ -33,7 +33,6 @@ window.addEventListener('load', async () => {
         option.textContent = family.name;
         option.value = family.id;
         familySelect.append(option);
-        console.log(family, 'option');
     }
 });
 
